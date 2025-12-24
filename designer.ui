@@ -25,7 +25,127 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QWidget {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    selection-background-color: #004d40; /* خلفية التحديد خضراء غامقة */
+    selection-color: #ffffff;
+}
+
+QPushButton {
+    background-color: #2d2d2d;
+    border: 1px solid #3a3a3a;
+    padding: 6px;
+    border-radius: 4px;
+    color: #d4d4d4;
+}
+
+QPushButton:hover {
+    background-color: #383838;
+    border: 1px solid #00aa00; /* حواف خضراء عند الهوفر */
+}
+
+QPushButton:pressed {
+    background-color: #004d40;
+    color: #ffffff;
+}
+
+QPushButton:checked {
+    background-color: #00695c;
+    border: 2px solid #00aa00;
+}
+
+QComboBox {
+    background-color: #2d2d2d;
+    border: 1px solid #3a3a3a;
+    padding: 5px;
+    color: #d4d4d4;
+    selection-background-color: #004d40;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/down-arrow-white.png); /* لو عندك أيقونة، أو خليها بدون */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #2d2d2d;
+    selection-background-color: #00695c;
+    color: #d4d4d4;
+    border: 1px solid #00aa00;
+}
+
+QTabWidget::pane {
+    border: 1px solid #3a3a3a;
+    background-color: #1e1e1e;
+}
+
+QTabBar::tab {
+    background-color: #2d2d2d;
+    padding: 8px 16px;
+    margin: 1px;
+    border: 1px solid #3a3a3a;
+    color: #a0a0a0;
+}
+
+QTabBar::tab:selected {
+    background-color: #1e1e1e;
+    border-bottom: 3px solid #00aa00; /* خط أخضر تحت التاب المختار */
+    color: #ffffff;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #383838;
+    border-bottom: 3px solid #00695c;
+}
+
+QLabel {
+    color: #d4d4d4;
+}
+
+QFrame {
+    background-color: #1e1e1e;
+    border: 1px solid #3a3a3a;
+}
+
+QGroupBox {
+    border: 1px solid #00aa00; /* حواف خضراء للـ GroupBox */
+    margin-top: 10px;
+    color: #d4d4d4;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #00aa00;
+}
+
+QScrollBar:vertical {
+    background: #2d2d2d;
+    width: 12px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #4a4a4a;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #00aa00;
+}
+
+QToolTip {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #00aa00;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
@@ -62,11 +182,11 @@ QPushButton {
 }
 
 QPushButton:hover {
-    background-color: #2d2d2d;
+    background-color: #00000;
 }
 
 QPushButton:pressed {
-    background-color: #3a3a3a;
+    background-color: #0000;
     border-color: #555;
 }
 
@@ -251,132 +371,6 @@ QProgressBar::chunk {
           </property>
          </widget>
         </item>
-        <item row="8" column="0" colspan="9">
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QPushButton" name="Sreenshot_btn">
-            <property name="font">
-             <font>
-              <family>Segon Ui</family>
-              <pointsize>-1</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #2d2d2d;          /* same tone as slider sub-page */
-    border: 2px solid #999;             /* metallic border like slider lever */
-    border-radius: 6px;
-    padding: 6px 12px;
-    color: #dddddd;
-    font-weight: bold;
-	
-}
-
-/* Hover effect: subtle brightness increase */
-QPushButton:hover {
-    background-color: #3a3a3a;
-    border-color: #ccc;
-}
-
-QPushButton:pressed {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
-    color: #a0a0ff;
-    border: 2px solid #5555ff;
-    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
-    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
-}</string>
-            </property>
-            <property name="text">
-             <string>Screenshot</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="Record_btn">
-            <property name="font">
-             <font>
-              <family>Segon Ui</family>
-              <pointsize>-1</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #2d2d2d;          /* same tone as slider sub-page */
-    border: 2px solid #999;             /* metallic border like slider lever */
-    border-radius: 6px;
-    padding: 6px 12px;
-    color: #dddddd;
-    font-weight: bold;
-}
-
-/* Hover effect: subtle brightness increase */
-QPushButton:hover {
-    background-color: #3a3a3a;
-    border-color: #ccc;
-}
-
-QPushButton:pressed {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
-    color: #a0a0ff;
-    border: 2px solid #5555ff;
-    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
-    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>Record</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="Freeze_btn">
-            <property name="font">
-             <font>
-              <family>Segon Ui</family>
-              <pointsize>-1</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    background-color: #2d2d2d;          /* same tone as slider sub-page */
-    border: 2px solid #999;             /* metallic border like slider lever */
-    border-radius: 6px;
-    padding: 6px 12px;
-    color: #dddddd;
-    font-weight: bold;
-}
-
-/* Hover effect: subtle brightness increase */
-QPushButton:hover {
-    background-color: #3a3a3a;
-    border-color: #ccc;
-}
-
-QPushButton:pressed {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
-    color: #a0a0ff;
-    border: 2px solid #5555ff;
-    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
-    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
-}</string>
-            </property>
-            <property name="text">
-             <string>Freeze</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="0" column="1">
          <widget class="QLabel" name="label_2">
           <property name="font">
@@ -497,8 +491,8 @@ QPushButton:pressed {
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_6">
-           <item row="0" column="0">
-            <widget class="QLabel" name="miniCamera1">
+           <item row="0" column="2">
+            <widget class="QLabel" name="miniCamera3">
              <property name="text">
               <string/>
              </property>
@@ -511,12 +505,139 @@ QPushButton:pressed {
              </property>
             </widget>
            </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="miniCamera3">
+           <item row="0" column="0">
+            <widget class="QLabel" name="miniCamera1">
              <property name="text">
               <string/>
              </property>
             </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QPushButton" name="Sreenshot_btn">
+               <property name="font">
+                <font>
+                 <family>Segon Ui</family>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    background-color: #2d2d2d;          /* same tone as slider sub-page */
+    border: 2px solid #999;             /* metallic border like slider lever */
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #dddddd;
+    font-weight: bold;
+	
+}
+
+/* Hover effect: subtle brightness increase */
+QPushButton:hover {
+    background-color: #3a3a3a;
+    border-color: #ccc;
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
+    color: #a0a0ff;
+    border: 2px solid #5555ff;
+    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
+    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
+}</string>
+               </property>
+               <property name="text">
+                <string>Screenshot</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Record_btn">
+               <property name="font">
+                <font>
+                 <family>Segon Ui</family>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    background-color: #2d2d2d;          /* same tone as slider sub-page */
+    border: 2px solid #999;             /* metallic border like slider lever */
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #dddddd;
+    font-weight: bold;
+}
+
+/* Hover effect: subtle brightness increase */
+QPushButton:hover {
+    background-color: #3a3a3a;
+    border-color: #ccc;
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
+    color: #a0a0ff;
+    border: 2px solid #5555ff;
+    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
+    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
+}
+
+</string>
+               </property>
+               <property name="text">
+                <string>Record</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Freeze_btn">
+               <property name="font">
+                <font>
+                 <family>Segon Ui</family>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    background-color: #2d2d2d;          /* same tone as slider sub-page */
+    border: 2px solid #999;             /* metallic border like slider lever */
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #dddddd;
+    font-weight: bold;
+}
+
+/* Hover effect: subtle brightness increase */
+QPushButton:hover {
+    background-color: #3a3a3a;
+    border-color: #ccc;
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
+    color: #a0a0ff;
+    border: 2px solid #5555ff;
+    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
+    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
+}</string>
+               </property>
+               <property name="text">
+                <string>Freeze</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
@@ -793,6 +914,24 @@ QPushButton:pressed {
                </color>
               </brush>
              </colorrole>
+             <colorrole role="Highlight">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>77</green>
+                <blue>64</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="HighlightedText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
              <colorrole role="PlaceholderText">
               <brush brushstyle="NoBrush">
                <color alpha="128">
@@ -858,6 +997,24 @@ QPushButton:pressed {
                </color>
               </brush>
              </colorrole>
+             <colorrole role="Highlight">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>77</green>
+                <blue>64</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="HighlightedText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
              <colorrole role="PlaceholderText">
               <brush brushstyle="NoBrush">
                <color alpha="128">
@@ -920,6 +1077,24 @@ QPushButton:pressed {
                 <red>45</red>
                 <green>45</green>
                 <blue>45</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Highlight">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>77</green>
+                <blue>64</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="HighlightedText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
                </color>
               </brush>
              </colorrole>
