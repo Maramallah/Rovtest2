@@ -362,7 +362,7 @@ QProgressBar::chunk {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Pilot_Tab">
        <attribute name="title">
@@ -2415,39 +2415,72 @@ QProgressBar::chunk {
            <enum>QFrame::Shadow::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
-           <item row="1" column="0">
-            <widget class="QPushButton" name="btn_calculate_Platform">
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-    background-color: #2d2d2d;          /* same tone as slider sub-page */
-    border: 2px solid #999;             /* metallic border like slider lever */
-    border-radius: 6px;
-    padding: 6px 12px;
-    color: #dddddd;
-    font-weight: bold;
-}
-
-/* Hover effect: subtle brightness increase */
-QPushButton:hover {
-    background-color: #3a3a3a;
-    border-color: #ccc;
-}
-
-QPushButton:pressed {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
-    color: #a0a0ff;
-    border: 2px solid #5555ff;
-    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
-    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
-}
-
-
-</string>
+           <item row="4" column="0" colspan="2">
+            <widget class="QGroupBox" name="iceberg_Data">
+             <property name="sizeIncrement">
+              <size>
+               <width>300</width>
+               <height>0</height>
+              </size>
              </property>
-             <property name="text">
-              <string>Calculate Platform</string>
+             <property name="baseSize">
+              <size>
+               <width>200</width>
+               <height>0</height>
+              </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Segon Ui</family>
+               <pointsize>-1</pointsize>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="title">
+              <string>Iceberg data</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="3" column="0">
+               <widget class="QLabel" name="Depth">
+                <property name="text">
+                 <string>Keel depth</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="Lon">
+                <property name="text">
+                 <string>Longtude</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="Heading">
+                <property name="text">
+                 <string>Heading</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="Lat">
+                <property name="text">
+                 <string>Latidude</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineLon"/>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineLat"/>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="lineHead"/>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="lineDepth"/>
+              </item>
+             </layout>
             </widget>
            </item>
            <item row="1" column="1">
@@ -2485,130 +2518,39 @@ QPushButton:pressed {
              </property>
             </widget>
            </item>
-           <item row="4" column="0" colspan="2">
-            <widget class="QGroupBox" name="iceberg_Data">
-             <property name="sizeIncrement">
-              <size>
-               <width>300</width>
-               <height>0</height>
-              </size>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="btn_calculate_Platform">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: #2d2d2d;          /* same tone as slider sub-page */
+    border: 2px solid #999;             /* metallic border like slider lever */
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #dddddd;
+    font-weight: bold;
+}
+
+/* Hover effect: subtle brightness increase */
+QPushButton:hover {
+    background-color: #3a3a3a;
+    border-color: #ccc;
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1a1a2a, stop:0.5 #0a0a1a, stop:1 #00000a);
+    color: #a0a0ff;
+    border: 2px solid #5555ff;
+    text-shadow: 0px 0px 8px rgba(100, 100, 255, 0.7);
+    box-shadow: 0px 0px 15px rgba(100, 100, 255, 0.4);
+}
+
+
+</string>
              </property>
-             <property name="baseSize">
-              <size>
-               <width>200</width>
-               <height>0</height>
-              </size>
+             <property name="text">
+              <string>Calculate Platform</string>
              </property>
-             <property name="font">
-              <font>
-               <family>Segon Ui</family>
-               <pointsize>-1</pointsize>
-               <strikeout>false</strikeout>
-              </font>
-             </property>
-             <property name="title">
-              <string>Iceberg data</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_8">
-              <item row="3" column="1">
-               <widget class="QTextEdit" name="text_Depth">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>30</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="Lon">
-                <property name="text">
-                 <string>Longtude</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QTextEdit" name="text_Lat">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>30</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="Lat">
-                <property name="text">
-                 <string>Latidude</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QTextEdit" name="text_Lon">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>30</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLabel" name="Heading">
-                <property name="text">
-                 <string>Heading</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QTextEdit" name="text_Head">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>30</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <widget class="QLabel" name="Depth">
-                <property name="text">
-                 <string>Keel depth</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
             </widget>
            </item>
            <item row="0" column="0" colspan="2">
@@ -2886,6 +2828,13 @@ QPushButton:pressed {
         <string>Auto_Pilot</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_14">
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="lab_Auto_Poilt">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QPushButton" name="AutoStart">
           <property name="text">
@@ -2897,13 +2846,6 @@ QPushButton:pressed {
          <widget class="QPushButton" name="AutoStop">
           <property name="text">
            <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QLabel" name="lab_Auto_Poilt">
-          <property name="text">
-           <string/>
           </property>
          </widget>
         </item>
